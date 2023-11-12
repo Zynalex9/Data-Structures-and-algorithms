@@ -1,0 +1,38 @@
+#Q1: Implement a basic queue using an array in Python. Include methods for enqueue, dequeue, checking if the queue is empty, and finding the size of the queue.
+class queue:
+       def __init__(self):
+              self.items=[]
+        
+       def is_empty(self):
+              return len(self.items)==0
+       def enqueue(self,item):
+              self.items.append(item)
+       def dequeue(self):
+           if not self.is_empty():
+                 return self.items.pop() #POP removes the last item of an array
+           else:
+                 print("Queue is empty")
+       def  front(self):
+              if not self.is_empty(): 
+                 return self.items[0]
+              else:
+                 print("Queue is empty")
+       def length(self):
+            return len(self.items)
+       def printQueue(self):
+              if not self.is_empty(): 
+                 return self.items
+              else:
+                 print("Queue is empty")
+             
+myQueue= queue()
+myQueue.enqueue(1)
+myQueue.enqueue(2)
+myQueue.enqueue(3)
+myQueue.enqueue(4)
+myQueue.enqueue(5)
+myQueue.enqueue(6)
+print(myQueue.front())
+print(myQueue.dequeue())
+myQueue.dequeue()
+print(myQueue.length())
